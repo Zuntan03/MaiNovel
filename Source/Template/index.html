@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+JP">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+	<style>
+		body {
+			font-family: 'Noto Serif JP', sans-serif;
+			background-color: #111;
+			color: #ccc;
+			accent-color: #666;
+			color-scheme: dark;
+			margin: 0;
+			overflow: hidden;
+		}
+
+		::selection {
+			background-color: #333;
+		}
+
+		div#maiNovel {
+			width: 100vw;
+			height: 100vh;
+		}
+
+		div#maiNovelImageArea {
+			height: calc(100% - 256px);
+		}
+
+		div#maiNovelImageArea.zoom {
+			height: calc(100% - 116px);
+		}
+
+		div#maiNovelImageArea>img {
+			object-fit: contain;
+			object-position: center bottom;
+			border: 0px;
+			height: 100%;
+			width: 100%;
+			user-select: none;
+			-webkit-user-drag: none;
+		}
+
+		div#maiNovelTextArea {
+			height: 175px;
+			overflow-y: scroll;
+			padding: 8px 8px 8px 24px;
+			font-size: 24px;
+			line-height: 1.5;
+		}
+
+		div#maiNovelTextArea.zoom {
+			height: 35px;
+		}
+
+		div#maiNovelFooter {
+			font-family: 'Noto Sans JP', sans-serif;
+			height: 81px;
+			font-size: 14px;
+			text-align: center;
+			white-space: nowrap;
+		}
+
+		div#maiNovelFooter>* {
+			margin: 2px 2px 4px 2px;
+			padding: 2px 2px;
+		}
+
+		div#maiNovelFooter>button {
+			padding: 1px 20px;
+		}
+	</style>
+	<script src="js/MaiNovel.js"></script>
+	<script src="js/MaiNovelPlayer.js"></script>
+	<script type="text/javascript">
+		window.maiNovelPlayer.jsonFilePath = "TitlePlaceholder.json";
+		window.maiNovelPlayer.r18 = false;
+	</script>
+	<title id="maiNovelTitle">TitlePlaceholder</title>
+</head>
+
+<body>
+	<div id="maiNovel">
+		<div id="maiNovelImageArea">
+			<img id="maiNovelCover">
+		</div>
+		<div id="maiNovelControl">
+			<div id="maiNovelTextArea">
+				Now loading...
+			</div>
+			<div id="maiNovelFooter">
+				<button id="maiNovelStop">■</button>
+				<select id="maiNovelLoopModeSelector">
+					<option value="None" selected>↻なし</option>
+					<option value="All">↻全体</option>
+					<option value="Scene">↻章</option>
+				</select>
+				<select id="maiNovelPlaySpeedSelector">
+					<option value="2.0">▶x2.0</option>
+					<option value="1.5">▶x1.5</option>
+					<option value="1.2">▶x1.2</option>
+					<option value="1.0" selected>▶x1.0</option>
+				</select>
+				<select id="maiNovelVolumeSelector">
+					<option value="1.0">♪100%</option>
+					<option value="0.75">♪ 75%</option>
+					<option value="0.5" selected>♪ 50%</option>
+					<option value="0.25">♪ 25%</option>
+					<option value="0.0">♪ 0%</option>
+				</select>
+				<button id="maiNovelZoom">⛶</button>
+				<br>
+				<label><input id="maiNovelAutoPlaySelector" type="checkbox" checked>自動</label>
+				<select id="maiNovelSceneSelector"></select>
+				<span>
+					<a href="../">↑</a>
+					<span id="maiNovelCredit">MaiNovelCreditPlaceholder</span>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

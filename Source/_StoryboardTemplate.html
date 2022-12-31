@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+JP">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+	<style>
+		body {
+			color: lightgray;
+			background-color: black;
+			accent-color: #666;
+			color-scheme: dark;
+			font-family: 'Noto Serif JP', sans-serif;
+			margin-left: 32px;
+			margin-right: 16px;
+			margin-bottom: 64px;
+		}
+
+		::selection {
+			background-color: #333;
+		}
+
+		form#playMode {
+			background-color: black;
+			position: fixed;
+			z-index: 99999;
+			bottom: 0;
+			width: 100%;
+			padding: 8px;
+			font-family: 'Noto Sans JP', sans-serif;
+		}
+
+		label {
+			padding: 8px;
+		}
+
+		a:link,
+		a:visited {
+			color: lightgray;
+		}
+
+		td {
+			padding: 3px 5px;
+			vertical-align: top;
+		}
+
+		img {
+			width: 256px;
+		}
+
+		audio {
+			width: 256px;
+			height: 18px;
+		}
+
+		audio::-webkit-media-controls-enclosure {
+			background-color: #222;
+		}
+
+		audio::-webkit-media-controls-volume-control-container {
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.maiNovelEnded = function (selfId, nextId) {
+			let playMode = document.getElementById("playMode").playMode.value;
+			if (playMode != "stop") {
+				if (playMode == "loop") {
+					let audio = document.getElementById(selfId);
+					audio.play();
+				}
+				else if (playMode == "next") {
+					let audio = document.getElementById(nextId);
+					audio.play();
+				} else {
+					console.error("Unknown playMode: " + playMode);
+				}
+			}
+		}
+
+		window.maiNovelShowImage = function (visible) {
+			let images = document.getElementsByTagName("img");
+			for (let i = 0; i < images.length; i++) {
+				let image = images[i];
+				image.style = visible ? "display: inline;" : "display: none;";
+			}
+			maiNovelUpdateUrl();
+		}
+
+		window.maiNovelUpdateUrl = function () {
+			let playMode = document.getElementById("playMode").playMode.value;
+			let showImage = document.getElementById("showImage").checked;
+			let params = new URLSearchParams([["playMode", playMode], ["showImage", showImage ? 1 : 0]]);
+			let url = document.location.origin + document.location.pathname + "?" + params.toString();
+			history.replaceState(null, "", url);
+		}
+
+		window.onload = function () {
+			let playModeElem = document.getElementById("playMode");
+			let showImageElem = document.getElementById("showImage");
+			let search = document.location.search;
+			if (search.length > 0) {
+				let params = new URLSearchParams(search);
+				playModeElem.playMode.value = params.get("playMode");
+				showImageElem.checked = (parseInt(params.get("showImage")) != 0);
+			} else {
+				playModeElem.playMode.value = "next";
+				showImageElem.checked = true;
+			}
+
+			let audios = document.getElementsByTagName("audio");
+			for (let i = 0; i < audios.length; i++) { audios[i].volume = 0.5; }
+
+			maiNovelShowImage(showImageElem.checked);
+		}
+	</script>
+	<title>#novelNamePlaceholder コンテ</title>
+</head>
+
+<body>
+	<h1><a href="">#novelNamePlaceholder</a></h1>
+	#data
+	<form id="playMode">
+		再生モード:
+		<label><input type="radio" name="playMode" value="stop" onchange="maiNovelUpdateUrl();">停止</label>
+		<label><input type="radio" name="playMode" value="loop" onchange="maiNovelUpdateUrl();">ループ</label>
+		<label><input type="radio" name="playMode" value="next" onchange="maiNovelUpdateUrl();">次</label>　
+		<label><input id="showImage" type="checkbox" onchange="maiNovelShowImage(this.checked);">画像表示</label>
+	</form>
+
+</body>
+
+</html>

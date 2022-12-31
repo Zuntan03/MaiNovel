@@ -1,0 +1,27 @@
+{
+	// https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "UpdateStoryboard",
+			"type": "PowerShell",
+			"request": "launch",
+			"script": "${workspaceFolder}\\Source\\GenerateCoeiroinkWav.ps1",
+			"createTemporaryIntegratedConsole": true,
+			"args": [
+				"${workspaceFolder}\\TitlePlaceholder.json",
+				"1"
+			]
+		},
+		{
+			"name": "ReloadChrome",
+			"type": "PowerShell",
+			"request": "launch",
+			"script": "${workspaceFolder}\\Source\\ReloadChrome.ps1",
+			"createTemporaryIntegratedConsole": true,
+			"args": [
+				"${workspaceFolder}\\TitlePlaceholder.json"
+			]
+		}
+	]
+}
