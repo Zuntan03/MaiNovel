@@ -94,7 +94,16 @@
 				`<option value="${scene.index}">${scene.index + 1} ${scene.name}</option>`;
 			preload(scene.messages[0]);
 		}
-		preload(novel.scenes[0].messages[0]);
+
+		let startSceneIndex = 0;
+		if (document.location.search.length > 0) {
+			let params = new URLSearchParams(document.location.search);
+			let sceneIndex = parseInt(params.get("s"));
+			if ((sceneIndex >= 0) && (sceneIndex < novel.scenes.length)) {
+				startSceneIndex = sceneIndex;
+			}
+		}
+		preload(novel.scenes[startSceneIndex].messages[0]);
 
 		player.sceneSelector.onchange = function (e) {
 			let message = novel.scenes[parseInt(e.target.value)].messages[0];

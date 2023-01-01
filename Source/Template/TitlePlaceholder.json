@@ -1,23 +1,18 @@
 ﻿{
 	"config": {
 		"title": "TitlePlaceholder",
-		"voiceName": "ろさ",
+		"voiceName": "ろさちゃん",
 		"imageFormat": "png",
 		"audioFormat": "wav",
-		"audioInterval": 1000,
-		"credit": "<a href='https:\/\/coeiroink.com\/' target='_blank'>COEIROINK</a>: <a href='https:\/\/coeiroink.com\/character\/audio-character\/tsukuyomi-chan' target='_blank'>つくよみちゃん</a>, <a href='https:\/\/senolosachan.com\/character\/' target='_blank'>汎用式概念</a>"
+		"credit": "<a href='https:\/\/coeiroink.com\/' target='_blank'>COEIROINK</a>: <a href='https:\/\/senolosachan.com\/character\/' target='_blank'>汎用式概念</a>"
 	},
 	"voices": [
 		{
-			"voiceName": "つくよみ",
-			"ciiStyleId": 0
-		},
-		{
-			"voiceName": "ろさ",
+			"voiceName": "ろさちゃん",
 			"ciiStyleId": 327965129
 		},
 		{
-			"voiceName": "ろさ 囁",
+			"voiceName": "ろさちゃん 囁",
 			"ciiStyleId": 1624935238
 		}
 	],
@@ -25,32 +20,29 @@
 		{
 			"sceneName": "実験用のシーン",
 			"messages": [
-				"テキストだけのメッセージを追加",
+				"実験用のシーンを最初に用意しました。このシーンを編集して、いろいろ試してください。",
+				"テキストだけのメッセージを追加します。",
 				{
-					"text": "オプション指定できるメッセージを追加",
-					"voiceName": "ろさ 囁"
+					"text": "オプション指定のあるメッセージを追加します。",
+					"voiceName": "ろさちゃん 囁"
 				}
 			]
 		},
 		{
-			"sceneName": "最初のシーン",
+			"sceneName": "はじまりのシーン",
 			"messages": [
 				"ここにテキストを記載すると読み上げます。",
-				"このシンプルな記法は、テキストをたくさん書くのに向いています。",
+				"このシンプルなテキストのみの記法は、テキストをたくさん書くのに向いています。",
 				{
-					"text": "特殊なオプションは、このように指定します。この例は、ボイスをつくよみさんに変更します。",
-					"voiceName": "つくよみ"
+					"text": "特殊なオプションは、このように指定します。この例は、ボイスをささやき声にします。",
+					"voiceName": "ろさちゃん 囁"
 				},
 				{
-					"text": "文章にあわせて、ささやき声にしてみたり。",
-					"voiceName": "ろさ 囁"
-				},
-				{
-					"text": "読み上げる速度を変えられます。",
+					"text": "COEIROINKが生成する音声の読み上げ速度を変えられます。",
 					"ciiSpeed": 1.5
 				},
 				{
-					"text": "読み上げる音量も変えられます。",
+					"text": "COEIROINKが生成する音声の音量を変えられます。",
 					"ciiVolume": 0.3
 				},
 				{
@@ -60,19 +52,22 @@
 			]
 		},
 		{
-			"sceneName": "途中のシーン",
-			"voiceName": "つくよみ",
+			"sceneName": "なかのシーン",
+			"voiceName": "ろさちゃん 囁",
 			"messages": [
-				"このシーンは、つくよみさんで読み上げる設定をしています。",
+				"このシーンは、シーン全体をささやき声で読み上げる設定をしています。",
 				{
-					"text": "どこからでもシーン移動ができますので、png/s01/s01m00.png のようにシーンの最初には画像を用意してください。",
+					"text": "このように表示する文章と、読み上げる文章を、違うものにできます。",
+					"ciiText": "読み上げる文章と表示する文章を、このように違うものにできます。"
+				},
+				{
+					"text": "どこからでもシーン移動ができますので、png/s02/s02m00.png のようにシーンの最初には画像を用意してください。",
 					"ciiText": "どこからでもシーン移動ができますので、シーンの最初には画像を用意してください。"
 				},
-				"このように表示する文章と、読み上げる文章を、違うものにできます。",
 				{
-					"text": "画像は png/s00/s00m00.png などのファイル名が一致したものを自動で表示しますが、別の指定方法もあります。これは画像のファイル名での指定の例です。",
-					"ciiText": "画像はファイル名が一致したものを自動で読み込みますが、別の指定方法もあります。これは画像のファイル名での指定の例です。",
-					"imageName": "s00m00"
+					"text": "画像は png/s00/s00m00.png 形式でファイル名が一致したものを自動で表示しますが、別の指定方法もあります。\"imageName\": \"s01m00\" は画像のファイル名での指定の例です。",
+					"ciiText": "画像はファイル名が一致したものを自動で表示しますが、別の指定方法もあります。これは画像のファイル名での指定の例です。",
+					"imageName": "s01m00"
 				},
 				{
 					"text": "同じシーンならメッセージ番号でも指定できます。この場合 m00 が s02m00 になります。",
@@ -81,11 +76,11 @@
 			]
 		},
 		{
-			"sceneName": "最後のシーン",
+			"sceneName": "おわりのシーン",
 			"messages": [
 				{
 					"text": "相対パスでの画像の指定もできます。",
-					"imagePath": "png/s00/s00m00.png"
+					"imagePath": "png/s01/s01m00.png"
 				},
 				"ノベルファイル先頭のコンフィグで、オプションの初期値を設定できます。",
 				{
@@ -102,19 +97,17 @@
 				},
 				"最後にオプションを盛ってみます。",
 				{
-					"voiceName": "ろさ 囁",
+					"voiceName": "ろさちゃん 囁",
 					"text": "お も て な し。",
 					"ciiText": "おぉ もぉ てぇ なぁ しぃ。",
 					"ciiVolume": 1.5,
 					"ciiSpeed": 1.5,
-					"imageName": "s01m00",
+					"imageName": "s00m00",
 					"audioInterval": 2000
 				},
 				{
 					"text": "おしまい。",
-					"insertHTML": "<a href='https:\/\/github.com\/Zuntan03\/MaiNovel' target='_blank'>MaiNovel<\/a> で作りました。",
-					"ciiText": " ",
-					"audioInterval": 4000
+					"insertHTML": "<a href='https:\/\/github.com\/Zuntan03\/MaiNovel' target='_blank'>MaiNovel<\/a> で作りました。"
 				}
 			]
 		}
