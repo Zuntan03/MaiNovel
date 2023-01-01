@@ -7,78 +7,7 @@ AI 技術の発展で、誰でも手軽に内心を自由に表現できる未�
 
 仕事などで自由時間が少なくても、絵や声優のスキルが無くても、ビジュアルノベルでの表現ができます。
 
-# どんなもの？
-
-## ステップ1: AI 画像生成などで、絵を用意します。
-
-今回は [Rinne さん](https://twitter.com/llrinnell) から許諾を得て、ツイートの画像でノベルを作ります。
-
-[![ツイート0](Document/image/README/AngelicVisitorTweet0.webp)](https://twitter.com/llrinnell/status/1605373421491101696)
-[![ツイート1](Document/image/README/AngelicVisitorTweet1.webp)](https://twitter.com/llrinnell/status/1605397648424374272)
-[![ツイート2](Document/image/README/AngelicVisitorTweet2.webp)](https://twitter.com/llrinnell/status/1605427846838632449)
-[![ツイート3](Document/image/README/AngelicVisitorTweet3.webp)](https://twitter.com/llrinnell/status/1605458048318730240)
-[![ツイート4](Document/image/README/AngelicVisitorTweet4.webp)](https://twitter.com/llrinnell/status/1605488249492733952)
-
-## ステップ2: ノベルを書きます。
-
-プレフィックスの cii は CoeIroInk の略です。
-
-```json
-{
-    "config": {
-        "title": "天使っぽいのが来た",
-        "voiceName": "素",
-        "imageFormat": "webp",
-        "audioFormat": "aac",
-        "credit": "COEIROINK: 汎用式概念"
-    },
-    "voices": [
-        { "voiceName": "素", "ciiStyleId": 327965129 },
-        { "voiceName": "囁", "ciiStyleId": 1624935238 }
-    ],
-    "scenes": [
-        {
-            "sceneName": "来訪",
-            "messages": [
-                {
-                    "text": "こんにちはー、天国の方から来ました。いますよねー？",
-                    "ciiVolume": 0.5
-                },
-                "…",
-                {
-                    "text": "†エンジェリックマスターキー†",
-                    "voiceName": "囁",
-                    "ciiSpeed": 0.7,
-                    "ciiVolume": 0.5
-                },
-                {
-                    "text": "あらあら、空いてますねー",
-                    "ciiVolume": 0.75
-                },
-                "こんにちは！あなたを救いにきました！",
-                "…",
-                "なるほど、さぞおつらかったでしょう…",
-                "では、殺しますか？",
-                "…",
-                "まぁ、お優しいのですね…",
-                "で、あれば死にますか…？",
-                "…",
-                "ですよね！ ",
-                "私共としてもそちらのコースがおすすめなので、今ならなんと天使の羽毛布団つきっ！",
-                "あなたは復讐、我々は地上天界両方でのゴミ処理、そして私は娯楽のお時間と、こんな素晴らしいことないですよね！",
-                "…",
-                "はいっ、おしまいっ。"
-            ]
-        }
-    ]
-}
-```
-
-## ステップ3: [できあがり（リンク先でノベルを確認できます）。](https://yyy.wpx.jp/m/av)
-
-[![天使っぽいのが来た](Document/image/README/AngelicVisitor.webp)](https://yyy.wpx.jp/m/av/)
-
-## [**より長いノベルの例はこちら**](https://yyy.wpx.jp/m/)
+## [**ノベルの例はこちら**](https://yyy.wpx.jp/m/)
 
 # はじめに
 
