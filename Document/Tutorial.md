@@ -1,4 +1,4 @@
-﻿# MaiNovel - チュートリアル
+﻿# [MaiNovel](../README.md) - [チュートリアル](Tutorial.md)
 
 MaiNovel のチュートリアルでは、コンテで音声を生成し、ノベルを動かすところまでを説明します。
 

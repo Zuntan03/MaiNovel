@@ -157,15 +157,18 @@ AI 技術の発展で、誰でも手軽に内心を自由に表現できる未�
 
 # はじめに
 
-MaiNovel でノベルを作成するには、まず [セットアップガイド](Document/SetupGuide.md) と [チュートリアル](Document/Tutorial.md) でノベルを動かしてみてください。<br>
-ノベルを動かしてみて、ノベルの作成に興味を持てそうでしたら [ノベル作成ガイド](Document/NovelCreationGuide.md) もどうぞ。
+MaiNovel でノベルを作成するには、まず [セットアップガイド](./Document/SetupGuide.md) と [チュートリアル](./Document/Tutorial.md) でノベルを動かしてみてください。<br>
+ノベルを動かしてみて、ノベルの作成に興味を持てそうでしたら [よくある質問と回答](./Document/FAQ.md)[ノベル作成ガイド](./Document/NovelCreationGuide.md) もどうぞ。
 
-[ノベルファイルフォーマット](Document/NovelFileFormat.md) は、最初は見なくても問題ありません。
+ツール類の説明や、[ノベルファイルフォーマット](./Document/NovelFileFormat.md) は、最初は見なくても問題ありません。
 
-* [セットアップガイド](Document/SetupGuide.md)
-* [チュートリアル](Document/Tutorial.md)
-* [ノベル作成ガイド](Document/NovelCreationGuide.md)
-* [ノベルファイルフォーマット](Document/NovelFileFormat.md)
+* [セットアップガイド](./Document/SetupGuide.md)
+* [チュートリアル](./Document/Tutorial.md)
+* [よくある質問と回答](./Document/FAQ.md)
+* [ノベル作成ガイド](./Document/NovelCreationGuide.md)
+* ツール類の説明
+	* [画像分類ツール](./Document/ImageClassifier.md)
+* [ノベルファイルフォーマット](./Document/NovelFileFormat.md)
 
 # 動作環境
 
@@ -187,6 +190,6 @@ MaiNovel でノベルを作成するには、まず [セットアップガイド
 
 # ライセンス
 
-MaiNovel は [MIT License](LICENSE.txt) です。
+MaiNovel は [MIT License](./LICENSE.txt) です。
 
-This software is released under the MIT License, see [LICENSE.txt](LICENSE.txt).
+This software is released under the MIT License, see [LICENSE.txt](./LICENSE.txt).

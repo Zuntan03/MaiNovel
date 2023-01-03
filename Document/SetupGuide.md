@@ -1,4 +1,4 @@
-﻿# MaiNovel - セットアップガイド
+﻿# [MaiNovel](../README.md) - [セットアップガイド](./SetupGuide.md)
 
 MaiNovel のセットアップ手順です。
 
@@ -9,7 +9,7 @@ MaiNovel のセットアップ手順です。
 	* [MYCOEIROINK](https://coeiroink.com/mycoeiroink) の『[ろさちゃん](https://senolosachan.com/download-%e2%94%82-type-%cf%87/)』をインストールします。
 * MaiNovel は Zip を適当なフォルダに展開します。
 * [画像生成 AI](https://www.google.com/search?q=%E7%94%BB%E5%83%8F%E7%94%9F%E6%88%90+AI) を利用できるようにします（後回しにできます）。
-* セットアップが終わったら、[チュートリアル](Tutorial.md) に進みます。
+* セットアップが終わったら、[チュートリアル](./Tutorial.md) に進みます。
 
 # Google Chrome のインストール
 
@@ -79,4 +79,4 @@ MaiNovel のサンプルで使用している [MYCOEIROINK](https://coeiroink.co
 
 # セットアップが完了したら
 
-[チュートリアル](Tutorial.md) に進みます。
+[チュートリアル](./Tutorial.md) に進みます。

@@ -1,4 +1,4 @@
-﻿# MaiNovel ノベルファイルフォーマット
+﻿# [MaiNovel](../README.md) - [ノベルファイルフォーマット](NovelFileFormat.md)
 
 Novel ファイルは以下の構造をしています。
 
