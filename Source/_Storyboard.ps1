@@ -24,22 +24,24 @@ class Storyboard {
 		foreach ($scene in $this.novel.scenes) {
 			$sStr = "`t<h2 id=`"$($scene.code)`">$($scene.code) $($scene.name)</h2>`r`n`t<table>`r`n";
 			foreach ($message in $scene.messages) {
-				$mStr = "`t`t<tr>`r`n`t`t`t<td>$($scene.code)<br>$($message.code)</td>`r`n`t`t`t<td>";
+				$mStr = "`t`t<tr><td>$($scene.code)<br>$($message.code)</td>`r`n`t`t`t<td>";
 
 				$mStr += "<audio controls id=`"$($message.name)`" " +
 				"src=`"$($message.GetWavPath($hashedWav))`"`r`n";
 
-				$mStr += "`t`t`t`tonended=`"setTimeout(function(){ " +
+				$mStr += "`t`t`t`t`tonended=`"setTimeout(function(){ " +
 				"window.maiNovelEnded('$($message.name)', '$($message.next.name)'); }, " +
-				"$($message.audioInterval));`">`r`n`t`t`t`t</audio>";
+				"$($message.audioInterval));`"></audio><br>`r`n";
+
+				$mStr += "`t`t`t`t$($message.insertHTML)$($message.text)";
 
 				if (Test-Path -Path "$dir\$($message.imagePath)") {
-					$mstr += "<br><img src=`"./$($message.imagePath)`" style=`"display:none;`">";
+					$mstr += "`r`n`t`t`t`t<br><img src=`"./$($message.imagePath)`" style=`"display:none;`">";
 				}
 
-				$mStr += "</td>`r`n";
-				$mStr += "`t`t`t<td>$($message.insertHTML)$($message.text)</td>`r`n";
+				$mStr += "`r`n`t`t`t</td>`r`n";
 				$mstr += "`t`t</tr>`r`n";
+
 				$sStr += $mStr;
 			}
 			$sStr += "`t</table>`r`n";

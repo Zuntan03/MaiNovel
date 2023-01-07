@@ -24,9 +24,9 @@ Novel ファイルは以下の構造をしています。
 * string voiceName
 	* 音声合成に使用する Voice の名前です。Scene と Message で voiceName を指定しなかった場合に、この voiceName を使用します。
 * string sceneCodeFormat
-	* Scene 番号の桁数を 0 を並べて指定します。例えば "000" だと 3桁で、省略時は "00" の 2桁です。
+	* Scene 番号の桁数を 0 を並べて指定します。例えば Scene の数が 100 を超える場合に "000" を指定します。省略時は "00" の 2桁です。
 * string messageCodeFormat
-	* Message 番号の桁数を 0 を並べて指定します。例えば "000" だと 3桁で、省略時は "00" の 2桁です。
+	* Message 番号の桁数を 0 を並べて指定します。例えば Message の数が 100 を超える場合に "000" を指定します。省略時は "00" の 2桁です。
 * string imageFormat
 	* ノベルで使用する画像のデフォルトの拡張子です。省略時は "png" です。
 * string audioFormat
@@ -35,10 +35,10 @@ Novel ファイルは以下の構造をしています。
 	* Message の間のデフォルトの待ち時間をミリ秒で指定します。省略時は 1000 です。Scene と Message で audioInterval を指定しなかった場合に、この audioInterval を使用します。
 * string credit
 	* ノベルの下部に表示される権利表記です。省略時は空文字列です。
-* float ciiVolume
-	* COEIROINK での音声合成に使用する音量で、Scene と Message の ciiVolume と乗算されます。省略時は 1.0 です。
-* float ciiSpeed
-	* COEIROINK での音声合成に使用する話速で、Scene と Message の ciiSpeed と乗算されます。省略時は 1.0 です。
+* float gvVolume
+	* 音声合成に使用する音量で、Scene と Message の gvVolume と乗算されます。省略時は 1.0 です。
+* float gvSpeed
+	* 音声合成に使用する話速で、Scene と Message の gvSpeed と乗算されます。省略時は 1.0 です。
 
 ## Voice
 
@@ -56,10 +56,10 @@ Novel ファイルは以下の構造をしています。
 	* 音声合成に使用する Voice の名前です。Message で voiceName を指定しなかった場合に、この voiceName を使用します。
 * int audioInterval;
 	* Message の間のデフォルトの待ち時間をミリ秒で指定します。Message で audioInterval を指定しなかった場合に、この audioInterval を使用します。
-* float ciiVolume
-	* COEIROINK での音声合成に使用する音量で、Config と Message の ciiVolume と乗算されます。省略時は 1.0 です。
-* float ciiSpeed
-	* COEIROINK での音声合成に使用する話速で、Config と Message の ciiSpeed と乗算されます。省略時は 1.0 です。
+* float gvVolume
+	* 音声合成に使用する音量で、Config と Message の gvVolume と乗算されます。省略時は 1.0 です。
+* float gvSpeed
+	* 音声合成に使用する話速で、Config と Message の gvSpeed と乗算されます。省略時は 1.0 です。
 * Message[] messages
 	* Scene 内の Message の配列です。
 
@@ -85,10 +85,10 @@ Message はオブジェクトとして定義する他に、文字列でも定義
 	* "png/s01/s01m02.png" といった表記で、画像への相対パスを指定します。
 	config.imageFormat 以外のフォーマットを指定できますが、完成時には画像を手動でコピーする必要があります。
 	imagePath を指定していると imageName は無視されます。
-* float ciiVolume
-	* COEIROINK での音声合成に使用する音量で、Config と Scene の ciiVolume と乗算されます。省略時は 1.0 です。
-* float ciiSpeed
-	* COEIROINK での音声合成に使用する話速で、Config と Scene の ciiSpeed と乗算されます。省略時は 1.0 です。
-* string ciiText
-	* COEIROINK での音声合成に使用する文章です。
+* float gvVolume
+	* 音声合成に使用する音量で、Config と Scene の gvVolume と乗算されます。省略時は 1.0 です。
+* float gvSpeed
+	* 音声合成に使用する話速で、Config と Scene の gvSpeed と乗算されます。省略時は 1.0 です。
+* string gvText
+	* 音声合成に使用する文章です。
 	text による表示とは異なる読み上げをしたい場合に利用します。

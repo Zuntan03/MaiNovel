@@ -74,9 +74,9 @@
 			message._audioInterval = data.audioInterval;
 			message.imageName = data.imageName;
 			message.imagePath = data.imagePath;
-			message.ciiVolume = data.ciiVolume;
-			message.ciiSpeed = data.ciiSpeed;
-			message.ciiText = data.ciiText;
+			message.gvVolume = data.gvVolume;
+			message.gvSpeed = data.gvSpeed;
+			message.gvText = data.gvText;
 		}
 		return message;
 	};

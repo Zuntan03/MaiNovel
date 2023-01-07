@@ -113,6 +113,8 @@
 			}
 		};
 
+		player.progress = document.getElementById("maiNovelProgress");
+
 		document.onkeydown = function (e) {
 			if (e.code == "Enter" || e.code == "Space") { play(); }
 			if (e.code == "Escape") { stop(); }
@@ -167,6 +169,8 @@
 
 		player.textArea.innerHTML = `${message.insertHTML}${message.text}`;
 
+		player.progress.innerText = `${message.index + 1}/${message.scene.messages.length}`;
+
 		if (message.imageLoaded) {
 			player.imageArea.removeChild(player.imageArea.children[0]);
 			player.imageArea.appendChild(message.image);
@@ -181,7 +185,9 @@
 
 		if (message.index == 0) {
 			player.title.innerText = `${novel.config.title} - ${message.scene.name}`;
+			player.sceneSelector.selectedIndex = (message.scene.index + 1);
 		}
+
 		return true;
 	};
 

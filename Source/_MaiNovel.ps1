@@ -7,8 +7,8 @@
 	$audioFormat;
 	$audioInterval;
 	$credit;
-	$ciiVolume;
-	$ciiSpeed;
+	$gvVolume;
+	$gvSpeed;
 
 	MaiConfig($data) {
 		$this.title = $data.title;
@@ -34,11 +34,13 @@
 		$this.credit = $data.credit;
 		if ($null -eq $this.credit) { $this.credit = ""; }
 
-		$this.ciiVolume = $data.ciiVolume;
-		if ($null -eq $this.ciiVolume) { $this.ciiVolume = 1.0; }
+		$this.gvVolume = $data.gvVolume;
+		if ($null -eq $this.gvVolume) { $this.gvVolume = $data.ciiVolume; }
+		if ($null -eq $this.gvVolume) { $this.gvVolume = 1.0; }
 
-		$this.ciiSpeed = $data.ciiSpeed;
-		if ($null -eq $this.ciiSpeed) { $this.ciiSpeed = 1.0; }
+		$this.gvSpeed = $data.gvSpeed;
+		if ($null -eq $this.gvSpeed) { $this.gvSpeed = $data.ciiSpeed; }
+		if ($null -eq $this.gvSpeed) { $this.gvSpeed = 1.0; }
 	}
 }
 
@@ -56,8 +58,8 @@ class MaiScene {
 	$name;
 	$voiceName;
 	$audioInterval;
-	$ciiVolume;
-	$ciiSpeed;
+	$gvVolume;
+	$gvSpeed;
 	$messages = @();
 
 	$index;
@@ -67,10 +69,12 @@ class MaiScene {
 		$this.name = $data.sceneName;
 		$this.voiceName = $data.voiceName;
 		$this.audioInterval = $data.audioInterval;
-		$this.ciiVolume = $data.ciiVolume;
-		if ($null -eq $this.ciiVolume) { $this.ciiVolume = 1.0; }
-		$this.ciiSpeed = $data.ciiSpeed;
-		if ($null -eq $this.ciiSpeed) { $this.ciiSpeed = 1.0; }
+		$this.gvVolume = $data.gvVolume;
+		if ($null -eq $this.gvVolume) { $this.gvVolume = $data.ciiVolume; }
+		if ($null -eq $this.gvVolume) { $this.gvVolume = 1.0; }
+		$this.gvSpeed = $data.gvSpeed;
+		if ($null -eq $this.gvSpeed) { $this.gvSpeed = $data.ciiSpeed; }
+		if ($null -eq $this.gvSpeed) { $this.gvSpeed = 1.0; }
 
 		foreach ($messageData in $data.messages) {
 			$this.messages += New-Object MaiMessage($messageData);
@@ -93,9 +97,9 @@ class MaiMessage {
 	$_audioInterval;
 	$imageName;
 	$imagePath;
-	$_ciiVolume = 1.0;
-	$_ciiSpeed = 1.0;
-	$ciiText;
+	$_gvVolume = 1.0;
+	$_gvSpeed = 1.0;
+	$gvText;
 
 	$scene;
 	$index;
@@ -103,8 +107,8 @@ class MaiMessage {
 	$voiceName;
 	$voice;
 	$audioInterval;
-	$ciiVolume;
-	$ciiSpeed;
+	$gvVolume;
+	$gvSpeed;
 
 	$code;
 	$name;
@@ -124,9 +128,12 @@ class MaiMessage {
 			$this._audioInterval = $data.audioInterval;
 			$this.imageName = $data.imageName;
 			$this.imagePath = $data.imagePath;
-			if ($null -ne $data.ciiVolume) { $this._ciiVolume = $data.ciiVolume; }
-			if ($null -ne $data.ciiSpeed) { $this._ciiSpeed = $data.ciiSpeed; }
-			$this.ciiText = $data.ciiText;
+			if ($null -ne $data.ciiVolume) { $this._gvVolume = $data.ciiVolume; }
+			if ($null -ne $data.gvVolume) { $this._gvVolume = $data.gvVolume; }
+			if ($null -ne $data.ciiSpeed) { $this._gvSpeed = $data.ciiSpeed; }
+			if ($null -ne $data.gvSpeed) { $this._gvSpeed = $data.gvSpeed; }
+			$this.gvText = $data.gvText;
+			if ($null -eq $this.gvText) { $this.gvText = $data.ciiText; }
 		}
 	}
 
@@ -153,8 +160,8 @@ class MaiMessage {
 		if ($null -eq $this.audioInterval) { $this.audioInterval = $scene.audioInterval; }
 		if ($null -eq $this.audioInterval) { $this.audioInterval = $novel.config.audioInterval; }
 
-		$this.ciiVolume = $this._ciiVolume * $scene.ciiVolume * $novel.config.ciiVolume;
-		$this.ciiSpeed = $this._ciiSpeed * $scene.ciiSpeed * $novel.config.ciiSpeed;
+		$this.gvVolume = $this._gvVolume * $scene.gvVolume * $novel.config.gvVolume;
+		$this.gvSpeed = $this._gvSpeed * $scene.gvSpeed * $novel.config.gvSpeed;
 
 		$this.code = "m{0:$($novel.config.messageCodeFormat)}" -f $index;
 		$this.name = "$($scene.code)$($this.code)";
@@ -202,9 +209,9 @@ class MaiMessage {
 			return $hash;
 		}
 		$result = $this.text.GetHashCode();
-		$result = MergeHash $result $this.ciiVolume;
-		$result = MergeHash $result $this.ciiSpeed;
-		$result = MergeHash $result $this.ciiText;
+		$result = MergeHash $result $this.gvVolume;
+		$result = MergeHash $result $this.gvSpeed;
+		$result = MergeHash $result $this.gvText;
 		$result = MergeHash $result $this.voice.ciiStyleId;
 		return $result;
 	}

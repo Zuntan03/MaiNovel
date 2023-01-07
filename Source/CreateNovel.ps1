@@ -32,6 +32,7 @@
 		$this.ReplaceNoBOM("$dstDir\.vscode\launch.json", "TitlePlaceholder", $title);
 		$this.ReplaceNoBOM("$dstDir\Preview.bat", "TitlePlaceholder", $title);
 		$this.ReplaceNoBOM("$dstDir\Publish.bat", "TitlePlaceholder", $title);
+		$this.ReplaceNoBOM("$dstDir\GenerateWav.bat", "TitlePlaceholder", $title);
 		$this.ReplaceNoBOM("$dstDir\RegenerateWav.bat", "TitlePlaceholder", $title);
 		$this.ReplaceNoBOM("$dstDir\ReloadChrome.bat", "TitlePlaceholder", $title);
 		$this.ReplaceNoBOM("$dstDir\UpdateStoryboard.bat", "TitlePlaceholder", $title);

@@ -5,7 +5,7 @@
 	$outputSamplingRate = 48000;
 
 	[bool] Generate($message, $path) {
-		$text = $message.ciiText;
+		$text = $message.gvText;
 		if ($null -eq $text) { $text = $message.text; }
 		$encodedText = [System.Web.HttpUtility]::UrlEncode($text)
 
@@ -21,8 +21,8 @@
 		$query.postPhonemeLength = $this.postPhonemeLength;
 
 		# ローカル設定
-		$query.volumeScale = $message.ciiVolume;
-		$query.speedScale = $message.ciiSpeed;
+		$query.volumeScale = $message.gvVolume;
+		$query.speedScale = $message.gvSpeed;
 
 		# JSON生成と文字化け対策
 		$json = ConvertTo-Json $query -Depth 16
