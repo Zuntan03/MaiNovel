@@ -156,4 +156,6 @@ class ImageClassifier {
 }
 
 $imageClassifier = New-Object ImageClassifier;
-foreach ($arg in $Args) { $imageClassifier.Classify($arg); }
+foreach ($arg in $Args) {
+	if (![string]::IsNullOrEmpty($arg)) { $imageClassifier.Classify($arg); }
+}

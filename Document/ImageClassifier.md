@@ -26,9 +26,9 @@ Windows で ImageClassifier.bat と ImageClassifier.ps1 があれば動作しま
 		- アンダースコアの代わりにスペースを使用する: 有効
 1. 複数の Interrogator を使用する場合は、タグファイルを生成した後に Interrogator を切り替えて、もう一度 Interrogate します。
 	- 同じタグでは信頼度が高い方の値を使用します。
-1. png とタグファイルをまとめたフォルダを、/Tool/ImageClassifier.bat にドラッグ＆ドロップするとサブフォルダに分類します。
+1. png とタグファイルをまとめたフォルダを、/Tool/ImageClassifier/ImageClassifier.bat にドラッグ＆ドロップするとサブフォルダに分類します。
 	- 分類されなかった png は、other/ に振り分けられます。
-	- タグとしきい値を変更したい場合は /Tool/ImageClassifier.ps1 の先頭にある ClassifyImage() の中を書き換えます。
+	- タグとしきい値を変更したい場合は /Tool/ImageClassifier/ImageClassifier.ps1 の先頭にある ClassifyImage() の中を書き換えます。
 1. 振り分け結果を確認しながら ClassifyImage() のしきい値などを調整して再振り分けします。
 	- そのため、振り分け前にサブフォルダの png を削除し、png をコピーで振り分けます。
 		- 振り分けに満足したら、親フォルダの png とタグファイルをまとめて消して、サブフォルダの png を利用します。

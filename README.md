@@ -44,6 +44,7 @@ MaiNovel でノベルを作成するには、まず [セットアップガイド
 * [よくある質問と回答](./Document/FAQ.md)
 * [ノベル作成ガイド](./Document/NovelCreationGuide.md)
 * ツール説明
+	* [生成画像ビューア](./Document/GenImageViewer.md)
 	* [画像分類ツール](./Document/ImageClassifier.md)
 * [ノベルファイルフォーマット](./Document/NovelFileFormat.md)
 
