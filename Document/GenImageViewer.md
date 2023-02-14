@@ -1,4 +1,4 @@
-﻿# [MaiNovel](../README.md) - [生成画像ビューア](./GenImageViewer.md) (GenImageViewer)
+﻿1# [MaiNovel](../README.md) - [生成画像ビューア](./GenImageViewer.md) (GenImageViewer)
 
 生成画像ビューアは Stable Diffusion web UI が生成した画像を、自動で大きく表示するツールです。
 キーボードの ASD キーで画像を振り分けるおまけ機能もあります。
@@ -8,6 +8,7 @@
 Windows で GenImageViewer.bat と GenImageViewer.ps1 があれば動作します。
 
 - GenImageViewer.bat をダブルクリックすると生成画像ビューアが立ち上がります。
+	- 初回起動時に警告が表示された場合は「詳細情報」>「実行」します。![Warn0](image/GenImageViewer/InitWarn0.png) ![Warn1](image/GenImageViewer/InitWarn1.png)
 	- 初回起動時に Stable Diffusion web UI が画像を出力するフォルダを指定してください。通常は web UI インストール先の「stable-diffusion-webui/outputs/」を選択します。
 	- web UI で画像を生成すると、ウィンドウの大きさに合わせて画像を表示します。
 - マウスの左ドラッグで表示位置を移動できます。
