@@ -1,4 +1,4 @@
-﻿1# [MaiNovel](../README.md) - [生成画像ビューア](./GenImageViewer.md) (GenImageViewer)
+﻿# [MaiNovel](../README.md) - [生成画像ビューア](./GenImageViewer.md) (GenImageViewer)
 
 生成画像ビューアは Stable Diffusion web UI が生成した画像を、自動で大きく表示するツールです。
 キーボードの ASD キーで画像を振り分けるおまけ機能もあります。
